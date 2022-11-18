@@ -1,14 +1,4 @@
-# Docus Starter
-
-Starter template for [Docus](https://docus.dev).
-
-## Clone
-
-Clone the repository (using `nuxi`):
-
-```bash
-npx nuxi init docs -t nuxt-themes/docus-starter
-```
+# Hubble Exchange Knowledge base
 
 ## Setup
 
