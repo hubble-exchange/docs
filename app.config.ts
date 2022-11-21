@@ -15,7 +15,7 @@ export default defineAppConfig({
       title: "Hubble Exchange",
       logo: true, // TODO: handle logo as string for component
       showLinkIcon: false, // Toggle links icons in the header
-      exclude: [],
+      exclude: ["/docs", "/faq"],
     },
     aside: {
       level: 1,
