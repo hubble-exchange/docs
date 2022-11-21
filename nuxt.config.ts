@@ -1,6 +1,9 @@
 export default defineNuxtConfig({
   extends: "@nuxt-themes/docus",
   ssr: false,
+  nitro: {
+    preset: "service-worker",
+  },
   content: {
     highlight: {
       // theme: {
