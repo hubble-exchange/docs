@@ -590,19 +590,19 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@nuxt-themes/docus@0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@nuxt-themes/docus/-/docus-0.3.1.tgz#4d52d944111d2cd3c316926a710a879f423113d7"
-  integrity sha512-VJTnPWAnFgZ51SxdLf+i7HerGj1ZN97Oe1HfW41GS6KWHegIIye51oIAUQTrhpofYZV9Y0Uc4umg5ALM1NiJAQ==
+"@nuxt-themes/docus@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@nuxt-themes/docus/-/docus-0.3.2.tgz#2d65e94b19c02b62faf1a91242975ce1b3f3e9e7"
+  integrity sha512-HvvNkbkNzdhaJ13Bmd7d1tVu2HBF7DEqQYnFz+JJD6iYKL3qcPOKGgfqXO9qcYBbiatAdq8oUL9YVIBrktOTcQ==
   dependencies:
     "@docsearch/css" "^3.3.0"
     "@docsearch/js" "^3.3.0"
     "@fontsource/inter" "^4.5.14"
     "@iconify/vue" "^4.0.0"
-    "@nuxt-themes/typography" "^0.0.13"
+    "@nuxt-themes/typography" "^0.0.17"
     "@nuxt/content" "^2.2.2"
-    "@nuxthq/studio" "^0.2.3"
-    "@nuxtjs/algolia" "^1.1.5"
+    "@nuxthq/studio" "^0.2.6"
+    "@nuxtjs/algolia" "^1.2.0"
     "@nuxtjs/color-mode" "^3.1.8"
     "@vueuse/core" "^9.5.0"
     "@vueuse/nuxt" "^9.5.0"
@@ -618,10 +618,10 @@
     pinceau latest
     style-value-types "^5.1.2"
 
-"@nuxt-themes/typography@^0.0.13":
-  version "0.0.13"
-  resolved "https://registry.yarnpkg.com/@nuxt-themes/typography/-/typography-0.0.13.tgz#b157adf85d3db8dfd42f885e5f1771ce792a615b"
-  integrity sha512-fUUnpb1kgvf8Gj7BAetzcEV4+pkcK/dYcRBhliJ8US3P26MvWgNFqoP43JOO2n2dI1wKXerIN9gUhrQvhVvQCw==
+"@nuxt-themes/typography@^0.0.17":
+  version "0.0.17"
+  resolved "https://registry.yarnpkg.com/@nuxt-themes/typography/-/typography-0.0.17.tgz#44de338fca6d2938ab67b32a7f5e3c063b2149ef"
+  integrity sha512-kX3MBc0YqYd9Lg+5Q0iXoqAlQ1APAXj3jJtGcwKcsa+DluQjPawO6l3tODVJNFVEIx5RnY4YA/Xn9zKYr2OPxQ==
   dependencies:
     "@nuxt-themes/tokens" latest
     "@nuxtjs/color-mode" "^3.1.8"
@@ -787,10 +787,10 @@
     vite-plugin-checker "^0.5.1"
     vue-bundle-renderer "^1.0.0"
 
-"@nuxthq/studio@^0.2.3":
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/@nuxthq/studio/-/studio-0.2.3.tgz#e42778a991356676bc1d90d199c8d09306b4bd23"
-  integrity sha512-X5K0UOu/7633m8xJY1bq0K3sd55ERSPBAzSTv2dhoLBPOvwC3HfIvDx29BqRmh9sxsZ/dmJVQP8ZCnGAAbQYVw==
+"@nuxthq/studio@^0.2.6":
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/@nuxthq/studio/-/studio-0.2.6.tgz#5eb0397fa913fc7736dfe6de8e34afd4a19d35fb"
+  integrity sha512-kUd4oo3yCWij8JG3lu7c8Zm7BWNGx36p2DAXeHySNst0X4wAzDJlSMiRCql8UwTK0mGAvQRu6galiOseefiUGA==
   dependencies:
     "@nuxt/kit" "^3.0.0-rc.13"
     "@nuxt/schema" "^3.0.0-rc.13"
@@ -799,7 +799,7 @@
     socket.io-client "^4.5.3"
     ufo "^0.8.6"
 
-"@nuxtjs/algolia@^1.1.5":
+"@nuxtjs/algolia@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@nuxtjs/algolia/-/algolia-1.2.0.tgz#7f755e6d993f1c7a5055f19496106df27d53f865"
   integrity sha512-zUJWf2Xh6VO3CNWWBJBacucO3R+9f1AuyfPfYW4+aKuRXKDnrGL4GU66jIwhW1ZxdVZSubZ+GHC7febusclieg==

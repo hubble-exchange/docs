@@ -2,32 +2,39 @@ import type { RouterConfig } from "@nuxt/schema";
 
 // https://router.vuejs.org/api/#routeroptions
 export default <RouterConfig>{
-  scrollBehavior(to, _, savedPosition) {
-    const nuxtApp = useNuxtApp();
-
-    // If history back
-    if (savedPosition) {
-      // Handle Suspense resolution
-      return new Promise((resolve) => {
-        nuxtApp.hooks.hookOnce("page:finish", () => {
-          setTimeout(() => resolve(savedPosition), 50);
-        });
-      });
-    }
-    // Scroll to heading on click
-    if (to.hash) {
-      setTimeout(() => {
-        const heading = document.querySelector(to.hash) as any;
-
-        return window.scrollTo({
-          top: heading.offsetTop,
-          behavior: "smooth",
-        });
-      });
+  scrollBehavior: (to, _from, savedPosition) => {
+    if (history.state.stop) {
       return;
+    }
+    if (history.state.smooth) {
+      return {
+        el: history.state.smooth,
+        behavior: "smooth",
+      };
+    }
+    if (to.hash) {
+      const el = document.querySelector(to.hash);
+      // vue-router does not incorporate scroll-margin-top on its own.
+      if (el) {
+        const top = parseFloat(getComputedStyle(el).marginTop) + 64; // navbar height;
+        return {
+          el: to.hash,
+          behavior: "smooth",
+          top,
+        };
+      }
+
+      return {
+        el: to.hash,
+        behavior: "smooth",
+      };
     }
 
     // Scroll to top of window
-    return { top: 0 };
+    if (savedPosition) {
+      return savedPosition;
+    } else {
+      return { top: 0 };
+    }
   },
 };
