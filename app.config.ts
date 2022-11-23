@@ -5,10 +5,10 @@ export default defineAppConfig({
     url: "https://docs.hubble.exchange",
     image: "/hubble-exchange-docs-meta.png",
     socials: {
-      twitter: "@HubbleExchange",
-      github: "https://github.com/hubble-exchange/",
-      youtube: "https://www.youtube.com/channel/UCgQ2qipdeAtI9_hGd9_HzrQ",
-      medium: "https://medium.com/@hubbleexchange",
+      twitter: "HubbleExchange",
+      github: "hubble-exchange",
+      youtube: "channel/UCgQ2qipdeAtI9_hGd9_HzrQ",
+      medium: "hubbleexchange",
     },
     header: {
       title: "Hubble Exchange",
