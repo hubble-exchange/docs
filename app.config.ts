@@ -17,7 +17,7 @@ export default defineAppConfig({
       exclude: ["/docs", "/faq"],
     },
     aside: {
-      level: 1,
+      level: 0,
       collapsed: false,
       exclude: [],
     },

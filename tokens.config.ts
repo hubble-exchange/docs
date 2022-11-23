@@ -7,7 +7,7 @@ export default defineTheme({
     alt: "Hubble Exchange Cover Image",
   },
   aside: {
-    level: 1,
+    level: 0,
     expanded: true,
   },
   utils: {
