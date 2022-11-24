@@ -7,8 +7,6 @@ export default defineAppConfig({
     socials: {
       twitter: "HubbleExchange",
       github: "hubble-exchange",
-      youtube: "channel/UCgQ2qipdeAtI9_hGd9_HzrQ",
-      medium: "hubbleexchange",
     },
     header: {
       title: "Hubble Exchange",
@@ -23,11 +21,22 @@ export default defineAppConfig({
     },
     footer: {
       credits: false,
-      icons: [
+      iconLinks: [
         {
-          label: "Hubble Exchange",
           href: "https://hubble.exchange",
-          component: "Logo",
+          icon: "gg:website",
+        },
+        {
+          href: "https://app.hubble.exchange",
+          icon: "carbon:application-web",
+        },
+        {
+          href: "https://youtube.com/channel/UCgQ2qipdeAtI9_hGd9_HzrQ",
+          icon: "mdi:youtube",
+        },
+        {
+          href: "https://medium.com/hubbleexchange",
+          icon: "ant-design:medium-square-filled",
         },
       ],
     },
