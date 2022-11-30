@@ -8,19 +8,9 @@ export default defineAppConfig({
       twitter: "HubbleExchange",
       github: "hubble-exchange",
     },
-    header: {
-      title: "Hubble Exchange",
-      logo: true, // TODO: handle logo as string for component
-      showLinkIcon: false, // Toggle links icons in the header
-      exclude: ["/docs", "/faq"],
-    },
-    aside: {
-      level: 0,
-      collapsed: false,
-      exclude: [],
-    },
+    header: { logo: true, showLinkIcon: false, exclude: ["/docs", "/blogs"] },
+    aside: { level: 1 },
     footer: {
-      credits: false,
       iconLinks: [
         {
           href: "https://hubble.exchange",
