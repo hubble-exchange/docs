@@ -1,4 +1,6 @@
-# Hubble Exchange Knowledge base
+# Hubble Exchange
+
+Documents and Blogs of Hubble Exchange
 
 ## Setup
 
