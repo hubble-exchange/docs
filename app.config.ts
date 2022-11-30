@@ -9,7 +9,7 @@ export default defineAppConfig({
       github: "hubble-exchange",
     },
     header: { logo: true, showLinkIcon: false, exclude: ["/docs", "/blogs"] },
-    aside: { level: 1 },
+    aside: { level: 1, collapsed: false, exclude: [] },
     footer: {
       iconLinks: [
         {
