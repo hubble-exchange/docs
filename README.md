@@ -4,6 +4,16 @@ Documents and Blogs of Hubble Exchange
 
 ## Setup
 
+Prepare machine for development
+
+```bash
+# for Mac OS
+zsh script/init.sh
+
+# Linux or Mac OS bash
+bash script/init-bash.sh
+```
+
 Install dependencies:
 
 ```bash
