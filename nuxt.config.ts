@@ -2,7 +2,10 @@ import { createResolver, logger } from "@nuxt/kit";
 const { resolve } = createResolver(import.meta.url);
 
 export default defineNuxtConfig({
-  extends: "@nuxt-themes/docus",
+  extends: [
+    "github:hubble-exchange/content/packages/meta", // static images and fonts
+    "@nuxt-themes/docus", // docs theme
+  ],
 
   components: [
     {

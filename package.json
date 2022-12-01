@@ -6,7 +6,9 @@
     "dev": "nuxi dev",
     "build": "nuxi build",
     "generate": "nuxi generate",
-    "preview": "nuxi preview"
+    "preview": "nuxi preview",
+    "postinstall": "nuxi prepare",
+    "cleanup": "npx rimraf node_modules dist .nuxt .output .netlify"
   },
   "devDependencies": {
     "nuxt": "^3.0.0",

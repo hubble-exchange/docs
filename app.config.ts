@@ -3,7 +3,7 @@ export default defineAppConfig({
     title: "Hubble Exchange",
     description: "The best place to learn/read about Hubble Exchange",
     url: "https://docs.hubble.exchange",
-    image: "/hubble-exchange-docs-meta.png",
+    image: "https://static.hubble.exchange/meta/hubble-exchange-docs.png",
     socials: {
       twitter: "HubbleExchange",
       github: "hubble-exchange",
