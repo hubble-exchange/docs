@@ -1,4 +1,4 @@
-import { createResolver, logger } from "@nuxt/kit";
+import { createResolver } from "@nuxt/kit";
 const { resolve } = createResolver(import.meta.url);
 
 export default defineNuxtConfig({
@@ -6,6 +6,8 @@ export default defineNuxtConfig({
     "github:hubble-exchange/content/packages/meta", // static images and fonts
     "@nuxt-themes/docus", // docs theme
   ],
+
+  css: ["@/assets/css/main.css"],
 
   components: [
     {

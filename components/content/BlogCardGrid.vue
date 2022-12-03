@@ -30,10 +30,10 @@ css({
   '.card-grid': {
     position: 'relative',
     paddingBottom: '{space.20}',
-    '@mq.sm': {
+    '@sm': {
       paddingBottom: '{space.24}',
     },
-    '@mq.lg': {
+    '@lg': {
       paddingBottom: '{space.32}',
     },
     '.action-title': {
@@ -48,10 +48,10 @@ css({
     '.title': {
       fontSize: '{text.3xl.fontSize}',
       lineHeight: '{text.3xl.lineHeight}',
-      fontWeight: '{fontWeights.bold}',
-      letterSpacing: '{letterSpacings.tight}',
-      color: '{text.colors.primary}',
-      '@mq.sm': {
+      fontWeight: '{fontWeight.bold}',
+      letterSpacing: '{letterSpacing.tight}',
+      color: '{text.color.primary}',
+      '@sm': {
         fontSize: '{text.4xl.fontSize}',
         lineHeight: '{text.4xl.lineHeight}',
       }
@@ -59,16 +59,16 @@ css({
     '.layout': {
       display: 'grid',
       gap: '{space.4}',
-      fontWeight: '{fontWeights.semibold}',
+      fontWeight: '{fontWeight.semibold}',
       textAlign: 'left',
       color: '{text.color.primary}',
-      '@mq.sm': {
+      '@sm': {
         gridTemplateColumns: 'repeat(2, minmax(0, 1fr))'
       },
-      '@mq.lg': {
+      '@lg': {
         gridTemplateColumns: 'repeat(3, minmax(0, 1fr))'
       },
-      '@mq.2xl': {
+      '@2xl': {
         gap: '{space.8}'
       }
     }

@@ -12,6 +12,6 @@
   },
   "devDependencies": {
     "nuxt": "^3.0.0",
-    "@nuxt-themes/docus": "^1.0.3"
+    "@nuxt-themes/docus": "^1.1.1"
   }
 }

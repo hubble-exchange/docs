@@ -45,11 +45,11 @@ css({
     width: '100%',
     padding: '{space.8}',
     borderRadius: '{radii.xl}',
-    border: '1px solid {colors.gray.200}',
+    border: '1px solid {color.gray.200}',
     background: '{backdrop.background}',
     '@dark': {
-      borderColor: '{colors.gray.900}',
-      color: '{colors.gray.50}'
+      borderColor: '{color.gray.900}',
+      color: '{color.gray.50}'
     },
     '&.blurry': {
       backdropFilter: '{backdrop.filter}',
@@ -64,13 +64,13 @@ css({
       marginBottom: '{space.2}',
       fontSize: '{text.lg.fontSize}',
       lineHeight: '{text.lg.lineHeight}',
-      fontWeight: '{fontWeights.semibold}'
+      fontWeight: '{fontWeight.semibold}'
     },
     '.description': {
       fontSize: '{text.sm.fontSize}',
       lineHeight: '{text.sm.lineHeight}',
-      fontWeight: '{fontWeights.medium}',
-      color: '{text.colors.secondary}'
+      fontWeight: '{fontWeight.medium}',
+      color: '{text.color.secondary}'
     }
   }
 })

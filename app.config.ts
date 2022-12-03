@@ -8,8 +8,8 @@ export default defineAppConfig({
       twitter: "HubbleExchange",
       github: "hubble-exchange",
     },
-    header: { logo: true, showLinkIcon: false, exclude: ["/docs", "/blogs"] },
-    aside: { level: 1, collapsed: false, exclude: [] },
+    header: { logo: true, showLinkIcon: true },
+    aside: { level: 1, collapsed: true },
     footer: {
       iconLinks: [
         {

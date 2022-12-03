@@ -74,42 +74,42 @@ defineProps({
 css({
   '.block-hero': {
     padding: '{space.20} 0',
-    '@mq.sm': {
+    '@sm': {
       padding: '{space.24} 0',
     },
-    '@mq.lg': {
+    '@lg': {
       padding: '{space.32} 0',
     },
     '.layout': {
       display: 'grid',
       gap: '{space.8}',
-      '@mq.lg': {
+      '@lg': {
         gridTemplateColumns: 'repeat(12, minmax(0, 1fr))'
       }
     },
     '.content': {
-      '@mq.lg': {
+      '@lg': {
         gridColumn: 'span 7 / span 2'
       },
       '.announce': {
         marginBottom: '{space.2}',
         textAlign: 'center',
-        '@mq.lg': {
+        '@lg': {
           textAlign: 'left'
         }
       },
       '.title': {
-        color: '{text.colors.primary}',
-        fontWeight: '{fontWeights.bold}',
-        letterSpacing: '{letterSpacings.tight}',
+        color: '{text.color.primary}',
+        fontWeight: '{fontWeight.bold}',
+        letterSpacing: '{letterSpacing.tight}',
         textAlign: 'center',
         fontSize: '{text.4xl.fontSize}',
         lineHeight: '{text.4xl.lineHeight}',
-        '@mq.sm': {
+        '@sm': {
           fontSize: '{text.5xl.fontSize}',
           lineHeight: '{text.5xl.lineHeight}',
         },
-        '@mq.lg': {
+        '@lg': {
           fontSize: '{text.6xl.fontSize}',
           lineHeight: '{text.6xl.lineHeight}',
           textAlign: 'left'
@@ -120,8 +120,8 @@ css({
         fontSize: '{text.lg.fontSize}',
         lineHeight: '{text.lg.lineHeight}',
         textAlign: 'center',
-        color: '{text.colors.secondary}',
-        '@mq.lg': {
+        color: '{text.color.secondary}',
+        '@lg': {
           textAlign: 'left'
         }
       },
@@ -135,28 +135,28 @@ css({
         justifyContent: 'center',
         gap: '{space.4}',
         marginTop: '{space.6}',
-        '@mq.sm': {
+        '@sm': {
           marginTop: '{space.10}',
           flexDirection: 'row',
           gap: '{space.6}'
         },
-        '@mq.lg': {
+        '@lg': {
           justifyContent: 'flex-start'
         },
         '.cta': {
           marginBottom: 0
         },
         '.secondary': {
-          fontWeight: '{fontWeights.medium}',
-          color: '{text.colors.secondary}',
+          fontWeight: '{fontWeight.medium}',
+          color: '{text.color.secondary}',
           '&:hover': {
-            color: '{text.colors.secondaryHover}'
+            color: '{text.color.secondaryHover}'
           }
         }
       }
     },
     '.support': {
-      '@mq.lg': {
+      '@lg': {
         gridColumn: 'span 5 / span 2'
       }
     }
