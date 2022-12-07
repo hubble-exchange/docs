@@ -1,17 +1,48 @@
 {
-  "name": "hubble-exchange",
-  "version": "0.2.0",
+  "name": "@hubble-exchange/docs",
+  "version": "0.3.0",
   "private": true,
+  "packageManager": "pnpm@7.1.5",
+  "homepage": "https://github.com/hubble-exchange/docs#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hubble-exchange/docs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hubble-exchange/docs/issues"
+  },
+  "keywords": [
+    "Hubble Exchange",
+    "Docs",
+    "LightPaper",
+    "Blogs",
+    "FAQ"
+  ],
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi build",
     "generate": "nuxi generate",
+    "lint": "eslint --cache .",
+    "lint:fix": "eslint . --fix",
+    "release": "bumpp package.json",
     "preview": "nuxi preview",
+    "prepare": "husky install",
     "postinstall": "nuxi prepare",
     "cleanup": "npx rimraf node_modules dist .nuxt .output .netlify"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.33.1",
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "@nuxt-themes/docus": "^1.1.3",
+    "@types/node": "^18.11.11",
+    "@typescript-eslint/eslint-plugin": "^5.45.1",
+    "@typescript-eslint/parser": "^5.45.1",
+    "bumpp": "^8.2.1",
+    "eslint": "^8.29.0",
+    "husky": "^8.0.2",
     "nuxt": "^3.0.0",
-    "@nuxt-themes/docus": "^1.1.1"
+    "rimraf": "^3.0.2",
+    "typescript": "^4.9.3"
   }
 }
