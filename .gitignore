@@ -127,6 +127,7 @@ out
 .nuxt
 dist
 .output
+article.md
 
 # Gatsby files
 .cache/

@@ -57,3 +57,12 @@ pnpm preview
 ---
 
 For a detailed explanation of how things work, check out [Docus](https://docus.dev).
+
+## Converting Medium Articles to Markdown
+
+Run below command with medium article URL it will generate article.md file copy and format the markdown and download image from article and use them similar to medium
+
+```bash
+node scripts/fetchMedium.js [medium url]
+# eg. node scripts/fetchMedium.js https://medium.com/hubbleexchange/makers-in-hubble-vamm-part-2-54eb9845b0b7
+```
