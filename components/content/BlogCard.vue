@@ -2,22 +2,22 @@
 defineProps({
   to: {
     type: String,
-    default: "/blogs",
+    default: '/blogs',
   },
   icon: {
     type: String,
-    default: "",
+    default: '',
   },
   iconClass: {
     type: String,
-    default: "",
+    default: '',
   },
   blurry: {
     type: Boolean,
     default: true,
     required: false,
   },
-});
+})
 </script>
 
 <template>

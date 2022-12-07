@@ -133,23 +133,21 @@
   </span>
 </template>
 
-<style scoped>
-.logo-span {
-  display: inline-flex;
-  align-items: center;
-}
-
-.logo-only {
-  display: none;
-}
-.logo-text {
-  display: inline;
-  height: 34px;
-}
-
-@media (min-width: 767px) {
-  .logo-only {
-    display: inline;
+<style scoped lang="ts">
+css({
+  '.logo-span': {
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: '6px',
+  },
+  '@media (max-width: 1024px)': {
+    '.logo-span svg':{
+      height: '1.75rem',
+      marginLeft: '0.5rem',
+    },
+    '.logo-text': {
+      display: 'none'
+    }
   }
-}
+})
 </style>

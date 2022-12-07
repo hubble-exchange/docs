@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { PropType } from "vue";
+import type { PropType } from 'vue'
 
 defineProps({
   cta: {
@@ -18,7 +18,7 @@ defineProps({
     type: Array as PropType<string[]>,
     required: false,
   },
-});
+})
 </script>
 
 <template>
@@ -48,12 +48,12 @@ defineProps({
               class="cta"
               bold
               size="large"
-              :href="(cta[1] as any)"
+              :href="cta[1] as any"
             >
               {{ cta[0] }}
             </ButtonLink>
 
-            <a v-if="secondary" :href="(secondary[1] as any)" class="secondary">
+            <a v-if="secondary" :href="secondary[1] as any" class="secondary">
               {{ secondary[0] }}
             </a>
           </template>
