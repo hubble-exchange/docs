@@ -1,22 +1,26 @@
-import { createResolver } from "@nuxt/kit";
-const { resolve } = createResolver(import.meta.url);
+import { createResolver } from '@nuxt/kit'
+import { defineNuxtConfig } from 'nuxt/config'
+
+const { resolve } = createResolver(import.meta.url)
 
 export default defineNuxtConfig({
   extends: [
-    "github:hubble-exchange/content/packages/meta", // static images and fonts
-    "@nuxt-themes/docus", // docs theme
+    'github:hubble-exchange/content/packages/meta', // static images and fonts
+    '@nuxt-themes/docus', // docs theme
   ],
 
-  css: ["@/assets/css/main.css"],
+  css: ['@/assets/css/main.css'],
 
   components: [
     {
-      prefix: "",
-      path: resolve("./components/content"),
+      prefix: '',
+      path: resolve('./components/content'),
       global: true,
     },
   ],
-
+  colorMode: {
+    preference: 'dark',
+  },
   content: {
     highlight: {
       // theme: {
@@ -27,7 +31,7 @@ export default defineNuxtConfig({
       // // Theme used if `html.sepia`
       //   sepia: "monokai",
       // },
-      preload: ["js", "json", "solidity"],
+      preload: ['js', 'json', 'solidity'],
     },
   },
-});
+})

@@ -1,0 +1,6 @@
+*.global.js
+build
+dist
+.output
+.nuxt
+node_modules

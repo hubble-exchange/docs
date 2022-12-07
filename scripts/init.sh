@@ -53,8 +53,8 @@ function setupProject() {
   coloredEcho "Installing dependencies..." magenta
   git checkout $git_branch
   git pull
-  npm install --global yarn
-  yarn
+  npm install -g pnpm
+  pnpm install
   coloredEcho "Project is ready read README.md for running localy" magenta
 }
 
