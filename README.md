@@ -13,8 +13,9 @@ zsh script/init.sh
 # Linux or Mac OS bash
 bash script/init-bash.sh
 
-# for windows coming soon
 ```
+
+[Windows Instructions](./scripts/WINDOWS.md)
 
 Install dependencies:
 

@@ -28,6 +28,7 @@
     "preview": "nuxi preview",
     "prepare": "husky install",
     "postinstall": "nuxi prepare",
+    "test": "echo \"no test\"",
     "cleanup": "npx rimraf node_modules dist .nuxt .output .netlify"
   },
   "devDependencies": {
