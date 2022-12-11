@@ -12,6 +12,8 @@ zsh script/init.sh
 
 # Linux or Mac OS bash
 bash script/init-bash.sh
+
+# for windows coming soon
 ```
 
 Install dependencies:
