@@ -1,4 +1,5 @@
 export default defineAppConfig({
+  // github: { edit: true, dir: 'content', owner: 'hubble-exchange', repo: 'docs', branch: 'main' },
   docus: {
     title: 'Hubble Exchange',
     description: 'The best place to learn/read about Hubble Exchange',
@@ -8,6 +9,7 @@ export default defineAppConfig({
       twitter: 'HubbleExchange',
       github: 'hubble-exchange',
     },
+    // github: { edit: true, dir: 'content', owner: 'hubble-exchange', repo: 'docs', branch: 'main' },
     header: { logo: true, showLinkIcon: true },
     aside: { level: 1, collapsed: false },
     footer: {
