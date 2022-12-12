@@ -1,4 +1,6 @@
 import { createResolver } from '@nuxt/kit'
+import transformerDirectives from '@unocss/transformer-directives'
+import transformerVariantGroup from '@unocss/transformer-variant-group'
 import { defineNuxtConfig } from 'nuxt/config'
 
 const { resolve } = createResolver(import.meta.url)
@@ -20,6 +22,13 @@ export default defineNuxtConfig({
   ],
   colorMode: {
     preference: 'dark',
+  },
+  modules: ['@unocss/nuxt'],
+  unocss: {
+    transformers: [
+      transformerDirectives(),
+      transformerVariantGroup(),
+    ],
   },
   content: {
     highlight: {
