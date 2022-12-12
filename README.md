@@ -8,10 +8,10 @@ Prepare machine for development
 
 ```bash
 # for Mac OS
-zsh script/init.sh
+zsh scripts/init.sh
 
 # Linux or Mac OS bash
-bash script/init-bash.sh
+bash scripts/init-bash.sh
 
 ```
 
