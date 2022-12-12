@@ -2,9 +2,13 @@
 defineProps({
   title: {
     type: String,
-    default: "Features",
+    default: 'Features',
   },
-});
+  moreHtml: {
+    type: Boolean,
+    default: false,
+  },
+})
 </script>
 
 <template>
@@ -16,7 +20,8 @@ defineProps({
         <ContentSlot :use="$slots.title" unwrap="p" />
       </h2>
       <div class="more">
-        <ContentSlot :use="$slots.more" unwrap="" />
+        <ContentSlot v-if="!moreHtml" :use="$slots.more" unwrap="" />
+        <slot v-else name="more" />
       </div>
     </div>
     <div class="layout">

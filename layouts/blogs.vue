@@ -1,5 +1,5 @@
 <script setup>
-const contentQuery = (await queryContent('blogs').where({ _partial: false, _dir: 'blogs', published: true }).sort({ created: -1 }).find())
+const blogs = (await queryContent('blogs').where({ _partial: false, _dir: 'blogs', published: true }).sort({ created: -1 }).find())
 </script>
 
 <template>
@@ -20,7 +20,7 @@ const contentQuery = (await queryContent('blogs').where({ _partial: false, _dir:
             <template #root>
               <Ellipsis />
             </template>
-            <blog-card v-for="blog in contentQuery" :key="blog._id" :to="blog._path">
+            <blog-card v-for="blog in blogs" :key="blog._id" :to="blog._path">
               <template #title>
                 {{ blog.title }}
               </template>
