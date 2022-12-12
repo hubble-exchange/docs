@@ -1,6 +1,6 @@
 # Hubble Exchange
 
-Documents and Blogs of Hubble Exchange
+Documents and Blog of Hubble Exchange
 
 ## Setup
 
