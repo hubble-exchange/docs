@@ -22,23 +22,20 @@ defineProps({
 
 <template>
   <NuxtLink :class="{ blurry }" class="card" :to="to">
-    <div class="w-full flex pb-6">
-      <Icon :name="icon || 'ph:book-open-bold'" />
-      <Icon class="ml-auto" :name="icon || 'uit:arrow-up-right'" />
-    </div>
-    <slot />
-    <div>
-      <h3 class="title">
+    <div class="w-full flex items-center mb-20">
+      <h3 class="title text-10">
         <ContentSlot :use="$slots.title" unwrap="p">
           Card title
         </ContentSlot>
       </h3>
-      <p class="description">
-        <ContentSlot :use="$slots.description" unwrap="p">
-          Card description
-        </ContentSlot>
-      </p>
+      <Icon class="ml-auto" :name="icon || 'uit:arrow-up-right'" />
     </div>
+    <slot />
+    <p class="description">
+      <ContentSlot :use="$slots.description" unwrap="p">
+        Card description
+      </ContentSlot>
+    </p>
   </NuxtLink>
 </template>
 
@@ -48,7 +45,7 @@ css({
     display: 'block',
     position: 'relative',
     width: '100%',
-    padding: '{space.5}',
+    padding: '{space.7}',
     borderRadius: '{radii.xl}',
     border: '1px solid {color.gray.200}',
     background: '{backdrop.background}',
@@ -61,20 +58,18 @@ css({
     },
     '.icon': {
       display: 'inline-block',
-      marginBottom: '{space.2}',
-      width: '{space.6}',
-      height: '{space.6}'
+      width: '{space.12}',
+      height: '{space.12}'
     },
     '.title': {
-      marginBottom: '{space.3}',
-      fontSize: '{text.xl.fontSize}',
+
       lineHeight: '{text.lg.lineHeight}',
       fontWeight: '{fontWeight.semibold}'
     },
     '.description': {
-      fontSize: '{text.base.fontSize}',
+      fontSize: '{text.3xl.fontSize}',
+      lineHeight: '{text.sm.lineHeight}',
       fontWeight: '{fontWeight.medium}',
-      color: '{text.color.secondary}'
     }
   }
 })
