@@ -1,43 +1,51 @@
 <script setup lang="ts">
-defineProps({
-  to: {
-    type: String,
-    default: '/blogs',
-  },
-  icon: {
-    type: String,
-    default: '',
-  },
-  iconClass: {
-    type: String,
-    default: '',
-  },
-  blurry: {
-    type: Boolean,
-    default: true,
-    required: false,
-  },
+const props = defineProps({
+  to: { type: String, default: '/blogs' },
+  icon: { type: String, default: '' },
+  iconClass: { type: String, default: '' },
+  blurry: { type: Boolean, default: true, required: false },
+  image: { type: String, default: 'content/cover-story.png' },
+  avatar: { type: String, default: '/avatars/candycarpet.jpg' },
 })
 </script>
 
 <template>
   <NuxtLink :class="{ blurry }" class="card" :to="to">
-    <div class="w-full flex pb-6">
-      <Icon :name="icon || 'ph:book-open-bold'" />
-      <Icon class="ml-auto" :name="icon || 'uit:arrow-up-right'" />
+    <div class="w-full pb-6">
+      <img :src="props.image" :alt="props.image" class="min-h-[190px] object-cover rounded">
     </div>
-    <slot />
-    <div>
+    <div class="text-xs">
+      <ContentSlot :use="$slots.category" unwrap="p">
+        Story Category
+      </ContentSlot>
+    </div>
+    <div class="mt-2 flex items-center">
       <h3 class="title">
         <ContentSlot :use="$slots.title" unwrap="p">
           Card title
         </ContentSlot>
       </h3>
-      <p class="description">
-        <ContentSlot :use="$slots.description" unwrap="p">
-          Card description
-        </ContentSlot>
-      </p>
+      <Icon class="ml-auto" :name="icon || 'uit:arrow-up-right'" />
+    </div>
+    <p class="description">
+      <ContentSlot :use="$slots.description" unwrap="p">
+        Card description
+      </ContentSlot>
+    </p>
+    <div class="flex items-center mt-4">
+      <img :src="props.avatar" :alt="props.avatar" class="h-8 w-8 rounded-full">
+      <div class="text-xs pl-2.5">
+        <div>
+          <ContentSlot :use="$slots.postBy" unwrap="p">
+            Story postBy
+          </ContentSlot>
+        </div>
+        <div class="text-gray-400">
+          <ContentSlot :use="$slots.postDate" unwrap="p">
+            Story postDate
+          </ContentSlot>
+        </div>
+      </div>
     </div>
   </NuxtLink>
 </template>
