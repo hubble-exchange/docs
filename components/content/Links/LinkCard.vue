@@ -1,31 +1,15 @@
 <script setup lang="ts">
 defineProps({
-  title: {
-    type: String,
-    default: 'Card title',
-  },
-  to: {
-    type: String,
-    default: '/blogs',
-  },
-  target: {
-    type: String,
-    default: undefined,
-  },
-  icon: {
-    type: String,
-    default: '',
-  },
-  blurry: {
-    type: Boolean,
-    default: true,
-    required: false,
-  },
+  title: { type: String, default: 'Card title' },
+  to: { type: String, default: '/blogs' },
+  target: { type: String, default: undefined },
+  icon: { type: String, default: '' },
+  blurry: { type: Boolean, default: true, required: false },
 })
 </script>
 
 <template>
-  <NuxtLink v-if="!target" :class="{ blurry }" class="card" :to="to">
+  <NuxtLink :class="{ blurry }" class="card" :to="to" :target="target">
     <div class="w-full flex h-full items-center p-5">
       <div class="title text-base">
         {{ title }}
@@ -33,14 +17,6 @@ defineProps({
       <Icon class="ml-auto" :name="icon || 'uit:arrow-up-right'" />
     </div>
   </NuxtLink>
-  <a v-else :class="{ blurry }" class="card" :href="to" :target="target">
-    <div class="w-full flex h-full items-center p-5">
-      <div class="title text-base">
-        {{ title }}
-      </div>
-      <Icon class="ml-auto" :name="icon || 'uit:arrow-up-right'" />
-    </div>
-  </a>
 </template>
 
 <style scoped lang="ts">
