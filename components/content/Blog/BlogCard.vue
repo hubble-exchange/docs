@@ -4,8 +4,8 @@ const props = defineProps({
   icon: { type: String, default: '' },
   iconClass: { type: String, default: '' },
   blurry: { type: Boolean, default: true, required: false },
-  image: { type: String, default: 'content/cover-story.png' },
-  avatar: { type: String, default: '/avatars/candycarpet.jpg' },
+  image: { type: String, default: '' },
+  avatar: { type: String, default: '' },
 })
 </script>
 

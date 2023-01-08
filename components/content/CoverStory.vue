@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props = defineProps({
-  image: { type: String, required: false },
+  image: { type: String, required: true },
   icon: { type: String, default: '' },
   to: { type: String, default: '' },
   href: { type: String, default: '' },
