@@ -1,28 +1,15 @@
 <script setup lang="ts">
 defineProps({
-  to: {
-    type: String,
-    default: '/blogs',
-  },
-  icon: {
-    type: String,
-    default: '',
-  },
-  iconClass: {
-    type: String,
-    default: '',
-  },
-  blurry: {
-    type: Boolean,
-    default: true,
-    required: false,
-  },
+  to: { type: String, required: true },
+  icon: { type: String, default: '' },
+  iconClass: { type: String, default: '' },
+  blurry: { type: Boolean, default: true, required: false },
 })
 </script>
 
 <template>
   <NuxtLink :class="{ blurry }" class="card" :to="to">
-    <div class="w-full flex items-center mb-20">
+    <div class="w-full flex items-center">
       <h3 class="title text-6 md:text-10">
         <ContentSlot :use="$slots.title" unwrap="p">
           Card title
@@ -30,7 +17,6 @@ defineProps({
       </h3>
       <Icon class="ml-auto" :name="icon || 'uit:arrow-up-right'" />
     </div>
-    <slot />
     <p class="description">
       <ContentSlot :use="$slots.description" unwrap="p">
         Card description
@@ -42,9 +28,11 @@ defineProps({
 <style scoped lang="ts">
 css({
   '.card': {
-    display: 'block',
+    display: 'flex',
+    flexDirection: 'column',
     position: 'relative',
     width: '100%',
+    minHeight: '214px',
     padding: '{space.7}',
     borderRadius: '{radii.xl}',
     border: '1px solid {color.gray.200}',
@@ -71,8 +59,9 @@ css({
       fontWeight: '{fontWeight.semibold}'
     },
     '.description': {
+      marginTop: 'auto !important',
       fontSize: '{text.xl.fontSize}',
-      lineHeight: '{text.sm.lineHeight}',
+      lineHeight: '{text.xl.lineHeight}',
       fontWeight: '{fontWeight.medium}',
       '@md': {
         fontSize: '{text.3xl.fontSize}',
