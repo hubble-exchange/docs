@@ -61,6 +61,14 @@ pnpm preview
 
 For a detailed explanation of how things work, check out [Docus](https://docus.dev).
 
+## Contributing to Blogs
+Use this [template for blogs](/content/3.blogs/_0.template.md)
+Start writing blog create new file at `/content/blogs/[blog-url].md` replace [blog-url] with blog title replacing space with - and removing special characters e.g. (/,&,%, etc.)
+
+### Blog Config
+Populate with the url path of the blog
+[Config file](blogs.config.ts) to manage cover story, weekly spotlight
+
 ## Converting Medium Articles to Markdown
 
 Run below command with medium article URL it will generate article.md file copy and format the markdown and download image from article and use them similar to medium

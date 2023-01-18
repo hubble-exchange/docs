@@ -15,13 +15,13 @@ const blogs = (await queryContent('blogs').where({ _partial: false, _dir: 'blogs
         View All
       </NuxtLink>
     </template>
-    <blog-card v-for="blog in blogs" :key="blog._id" :to="blog._path">
+    <recent-card v-for="blog in blogs" :key="blog._id" :to="blog._path">
       <template #title>
         {{ blog.title }}
       </template>
       <template #description>
         <pre>{{ blog.description }}...</pre>
       </template>
-    </blog-card>
+    </recent-card>
   </blog-card-grid>
 </template>
