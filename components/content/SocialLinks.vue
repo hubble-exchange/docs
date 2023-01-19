@@ -9,7 +9,7 @@ const links = [
 
 <template>
   <div class="flex items-center gap-4">
-    <a v-for="item in links" :key="item.title" href="item.link" class="flex items-center underline underline-(1 dotted offset-4) font-medium ">
+    <a v-for="item in links" :key="item.title" :href="item.link" class="flex items-center underline underline-(1 dotted offset-4) font-medium ">
       <Icon v-if="item.icon" :name="item.icon" class="mr-2" />
       {{ item.title }}
     </a>
