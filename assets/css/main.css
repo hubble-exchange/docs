@@ -1,3 +1,10 @@
+:root {
+  --header-height: 64px;
+  --footer-height: 50px;
+  --page-height: calc(100vh - calc(calc(var(var(--header-height)) + var(var(--footer-height)))))
+  --page-max-width: 90rem;
+}
+
 .ellipsis .ellipsis-item {
   background: linear-gradient(90.01deg, hsl(149, 89%, 58%, 0.22) 0%, hsl(263, 94%, 61%, 0.22) 36.74%, hsl(295, 88%, 50%, 0.22) 55.78%, hsl(47, 98%, 58%, 0.22) 100.01%) !important;
 }
@@ -5,4 +12,31 @@
 .asset-address p{
   margin: 0 !important;
   padding-left: 10px;
+}
+
+.icon-color {
+  --at-apply: text-gray-500 dark:text-gray-400 hover:(dark:text-gray-200 text-gray-700);
+}
+
+.backdrop-bg {
+  background-color: #fffc;
+}
+
+.dark .backdrop-bg {
+  background-color: #0c0d0ccc;
+}
+
+.backdrop-flter {
+  -webkit-backdrop-filter: saturate(200%) blur(20px);
+  backdrop-filter: saturate(200%) blur(20px);
+}
+
+header {
+  background-color: #fffc !important;
+  -webkit-backdrop-filter: saturate(200%) blur(20px) !important;
+  backdrop-filter: saturate(200%) blur(20px) !important;
+}
+
+.dark header {
+  background-color: #0c0d0ccc !important;
 }

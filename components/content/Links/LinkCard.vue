@@ -1,56 +1,19 @@
 <script setup lang="ts">
 defineProps({
   title: { type: String, default: 'Card title' },
-  to: { type: String, default: '/blogs' },
+  to: { type: String, default: '' },
   target: { type: String, default: undefined },
   icon: { type: String, default: '' },
-  blurry: { type: Boolean, default: true, required: false },
 })
 </script>
 
 <template>
-  <NuxtLink :class="{ blurry }" class="card" :to="to" :target="target">
+  <NuxtLink class="block relative w-full max-h-16 p-1 rounded-xl border border-gray-200 dark:border-gray-900 text-gray-50" :to="to" :target="target">
     <div class="w-full flex h-full items-center p-5">
-      <div class="title text-base">
+      <div class="title text-base font-semibold leading-3">
         {{ title }}
       </div>
-      <Icon class="ml-auto" :name="icon || 'uit:arrow-up-right'" />
+      <Icon class="ml-auto inline-block w-6 h-6" :name="icon || 'uit:arrow-up-right'" />
     </div>
   </NuxtLink>
 </template>
-
-<style scoped lang="ts">
-css({
-  '.card': {
-    display: 'block',
-    position: 'relative',
-    width: '100%',
-    maxHeight:'{space.16}',
-    padding: '{space.1}',
-    borderRadius: '{radii.xl}',
-    border: '1px solid {color.gray.200}',
-    background: '{backdrop.background}',
-    marginBottom:'{space.4}',
-    '&:last-child':{
-        marginBottom:'{space.0}',
-    },
-    '@dark': {
-      borderColor: '{color.gray.900}',
-      color: '{color.gray.50}'
-    },
-    '&.blurry': {
-      backdropFilter: '{backdrop.filter}',
-    },
-    '.icon': {
-      display: 'inline-block',
-      width: '{space.6}',
-      height: '{space.6}'
-    },
-    '.title': {
-
-      lineHeight: '{text.lg.lineHeight}',
-      fontWeight: '{fontWeight.semibold}'
-    },
-  }
-})
-</style>

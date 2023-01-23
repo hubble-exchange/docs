@@ -1,39 +1,25 @@
 <script setup lang="ts">
 defineProps({
-  to: {
-    type: String,
-    default: '/blogs',
-  },
-  icon: {
-    type: String,
-    default: '',
-  },
-  iconClass: {
-    type: String,
-    default: '',
-  },
-  blurry: {
-    type: Boolean,
-    default: true,
-    required: false,
-  },
+  to: { type: String, default: '/blogs' },
+  icon: { type: String, default: '' },
+  iconClass: { type: String, default: '' },
 })
 </script>
 
 <template>
-  <NuxtLink :class="{ blurry }" class="card" :to="to">
+  <NuxtLink :to="to" class="card block relative w-full p-5 rounded-xl border border-gray-200 dark:(border-gray-900 text-gray-50)">
     <div class="w-full flex pb-6">
       <Icon :name="icon || 'ph:book-open-bold'" />
       <Icon class="ml-auto" :name="icon || 'uit:arrow-up-right'" />
     </div>
     <slot />
     <div>
-      <h3 class="title">
+      <h3 class="mb-3 text-5 leading-7 font-semibold">
         <ContentSlot :use="$slots.title" unwrap="p">
           Card title
         </ContentSlot>
       </h3>
-      <p class="description">
+      <p class="description font-medium text-gray-400">
         <ContentSlot :use="$slots.description" unwrap="p">
           Card description
         </ContentSlot>
@@ -42,40 +28,8 @@ defineProps({
   </NuxtLink>
 </template>
 
-<style scoped lang="ts">
-css({
-  '.card': {
-    display: 'block',
-    position: 'relative',
-    width: '100%',
-    padding: '{space.5}',
-    borderRadius: '{radii.xl}',
-    border: '1px solid {color.gray.200}',
-    background: '{backdrop.background}',
-    '@dark': {
-      borderColor: '{color.gray.900}',
-      color: '{color.gray.50}'
-    },
-    '&.blurry': {
-      backdropFilter: '{backdrop.filter}',
-    },
-    '.icon': {
-      display: 'inline-block',
-      marginBottom: '{space.2}',
-      width: '{space.6}',
-      height: '{space.6}'
-    },
-    '.title': {
-      marginBottom: '{space.3}',
-      fontSize: '{text.xl.fontSize}',
-      lineHeight: '{text.lg.lineHeight}',
-      fontWeight: '{fontWeight.semibold}'
-    },
-    '.description': {
-      fontSize: '{text.base.fontSize}',
-      fontWeight: '{fontWeight.medium}',
-      color: '{text.color.secondary}'
-    }
-  }
-})
+<style scoped>
+.icon {
+  --at-apply: inline-block mb-2 w-6 h-6;
+}
 </style>

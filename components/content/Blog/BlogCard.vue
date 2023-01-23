@@ -3,33 +3,32 @@ const props = defineProps({
   to: { type: String, default: '/blogs' },
   icon: { type: String, default: '' },
   iconClass: { type: String, default: '' },
-  blurry: { type: Boolean, default: true, required: false },
   image: { type: String, default: '' },
   avatar: { type: String, default: '' },
 })
 </script>
 
 <template>
-  <NuxtLink :class="{ blurry }" class="card" :to="to">
+  <NuxtLink class="card block relative w-full p-5 rounded-xl border border-gray-200 dark:(border-gray-900 text-gray-50)" :to="to">
     <div class="w-full pb-6">
       <img :src="props.image" :alt="props.image" class="min-h-[190px] object-cover rounded">
     </div>
     <div class="text-xs">
       <ContentSlot :use="$slots.category" unwrap="p">
-        Story Category
+        Category
       </ContentSlot>
     </div>
     <div class="mt-2 flex items-center">
-      <h3 class="title">
+      <h3 class="mb-3 font-semibold text-xl leading-7 max-w-4/5 truncate">
         <ContentSlot :use="$slots.title" unwrap="p">
-          Card title
+          Blog Title
         </ContentSlot>
       </h3>
-      <Icon class="ml-auto" :name="icon || 'uit:arrow-up-right'" />
+      <Icon class="ml-auto inline-block mb-2 !w-6 !h-6" :name="icon || 'uit:arrow-up-right'" />
     </div>
-    <p class="description">
+    <p class="text-base font-medium text-zinc-400">
       <ContentSlot :use="$slots.description" unwrap="p">
-        Card description
+        Short Description
       </ContentSlot>
     </p>
     <div class="flex items-center mt-4">
@@ -37,53 +36,15 @@ const props = defineProps({
       <div class="text-xs pl-2.5">
         <div>
           <ContentSlot :use="$slots.postBy" unwrap="p">
-            Story postBy
+            Author
           </ContentSlot>
         </div>
         <div class="text-gray-400">
           <ContentSlot :use="$slots.postDate" unwrap="p">
-            Story postDate
+            Publish Date
           </ContentSlot>
         </div>
       </div>
     </div>
   </NuxtLink>
 </template>
-
-<style scoped lang="ts">
-css({
-  '.card': {
-    display: 'block',
-    position: 'relative',
-    width: '100%',
-    padding: '{space.5}',
-    borderRadius: '{radii.xl}',
-    border: '1px solid {color.gray.200}',
-    background: '{backdrop.background}',
-    '@dark': {
-      borderColor: '{color.gray.900}',
-      color: '{color.gray.50}'
-    },
-    '&.blurry': {
-      backdropFilter: '{backdrop.filter}',
-    },
-    '.icon': {
-      display: 'inline-block',
-      marginBottom: '{space.2}',
-      width: '{space.6}',
-      height: '{space.6}'
-    },
-    '.title': {
-      marginBottom: '{space.3}',
-      fontSize: '{text.xl.fontSize}',
-      lineHeight: '{text.lg.lineHeight}',
-      fontWeight: '{fontWeight.semibold}'
-    },
-    '.description': {
-      fontSize: '{text.base.fontSize}',
-      fontWeight: '{fontWeight.medium}',
-      color: '{text.color.secondary}'
-    }
-  }
-})
-</style>

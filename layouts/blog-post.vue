@@ -20,27 +20,27 @@ const isOpen = ref(false)
 
 <template>
   <div class="relative min-h-[91vh]">
-    <Ellipsis top="0" right="0px" width="75%" blur="150px" />
+    <Ellipsis top="0" right="0" width="75%" blur="150px" />
     <div class="relative HeaderContainer" />
-    <Container padded class="docs-page-content">
+    <Container padded class="docs-page-content relative flex flex-col-reverse lg:(grid gap-8 grid-cols-12)">
       <aside
         ref="asideNav"
-        class="aside-nav"
+        class="aside-nav hidden overflow-y-auto lg:(block sticky col-span-2 self-start p-8)"
       >
-        <NuxtLink to="/blogs" class="go-back-link">
-          <Icon name="heroicons-outline:arrow-left" class="icon" />
-          <span class="text">Go back</span>
+        <NuxtLink to="/blogs" class="flex items-center text-sm leading-5 cursor-pointer text-gray-500 hover:text-gray-700">
+          <Icon name="heroicons-outline:arrow-left" class="w-4 h-4" />
+          <span class="ml-2">Go back</span>
         </NuxtLink>
       </aside>
 
       <article
         v-if="page.published"
-        class="page-body"
+        class="page-body relative flex flex-col flex-1 py-8 lg:mt-0"
         :class="{
-          'one-column': !hasAside && !hasToc,
-          'two-column': (!hasToc || !hasAside) && !(!hasAside && !hasToc),
-          'three-column': hasToc && hasAside,
-          'with-toc': hasToc,
+          'lg:col-span-12': !hasAside && !hasToc,
+          'lg:col-span-10': (!hasToc || !hasAside) && !(!hasAside && !hasToc),
+          'lg:col-span-8': hasToc && hasAside,
+          'pt-12 lg:pt-8': hasToc,
         }"
       >
         <header class="mb-4 lg:mb-6">
@@ -59,12 +59,12 @@ const isOpen = ref(false)
 
       <article
         v-else
-        class="page-body"
+        class="page-body relative flex flex-col flex-1 py-8 lg:mt-0"
         :class="{
-          'one-column': !hasAside && !hasToc,
-          'two-column': (!hasToc || !hasAside) && !(!hasAside && !hasToc),
-          'three-column': hasToc && hasAside,
-          'with-toc': hasToc,
+          'lg:col-span-12': !hasAside && !hasToc,
+          'lg:col-span-10': (!hasToc || !hasAside) && !(!hasAside && !hasToc),
+          'lg:col-span-8': hasToc && hasAside,
+          'pt-12 lg:pt-8': hasToc,
         }"
       >
         <div class="flex items-center justify-center">
@@ -75,15 +75,15 @@ const isOpen = ref(false)
       <!-- TOC -->
       <div
         v-if="hasToc && page.published"
-        class="toc"
+        class="toc sticky flex items-center -mx-4 sm:-mx-6 lg:(mx-0 col-span-2 self-start py-8)"
       >
-        <div class="toc-wrapper">
-          <button @click="isOpen = !isOpen">
-            <span class="title">Table of Contents</span>
-            <Icon name="heroicons-outline:chevron-right" class="icon" :class="[isOpen && 'rotate']" />
+        <div class="toc-wrapper w-full px-4 backdrop-bg backdrop-flter sm:px-6 lg:(px-0 bg-transparent)">
+          <button class="flex items-center py-3 w-full h-full lg:hidden" @click="isOpen = !isOpen">
+            <span class="text-xs font-semibold mr-1">Table of Contents</span>
+            <Icon name="heroicons-outline:chevron-right" class="w-4 h-4 transition-100" :class="[isOpen && 'transform-rotate-90']" />
           </button>
 
-          <div class="docs-toc-wrapper" :class="[isOpen && 'opened']">
+          <div class="docs-toc-wrapper hidden mb-4 lg:(mt-0 block)" :class="[isOpen && '!block']">
             <DocsToc @move="isOpen = false" />
           </div>
         </div>
@@ -92,188 +92,33 @@ const isOpen = ref(false)
   </div>
 </template>
 
-<style scoped lang="ts">
-css({
-  '.go-back-link': {
-    display: 'flex',
-    alignItems: 'center',
-    fontSize: '{text.sm.fontSize}',
-    lineHeight: '{text.sm.lineHeight}',
-    cursor: 'pointer',
-    color: '{color.gray.500}',
-    '&:hover': {
-      color: '{color.gray.700}',
-    },
-    '.icon': {
-      width: '{space.4}',
-      height: '{space.4}'
-    },
-    '.text': {
-      marginLeft: '{space.2}'
-    }
-  },
-  '.docs-page-content': {
-    position: 'relative',
-    display: 'flex',
-    flexDirection: 'column-reverse',
-    minHeight: '{docus.page.height}',
-    '@lg': {
-      display: 'grid',
-      gap: '{space.8}',
-      gridTemplateColumns: 'repeat(12, minmax(0, 1fr))'
-    }
-  },
-  '.aside-nav': {
-    display: 'none',
-    overflowY: 'auto',
-    '@lg': {
-      display: 'block',
-      position: 'sticky',
-      top: '{docus.header.height}',
-      gridColumn: 'span 2/span 2',
-      alignSelf: 'flex-start',
-      height: 'calc(100vh - {docus.header.height})',
-      py: '{space.8}',
-    }
-  },
-  '.page-body': {
-    position: 'relative',
-    display: 'flex',
-    flexDirection: "column",
-    flex: '1 1 0%',
-    py: '{space.8}',
-    '&.one-column': {
-      '@lg': {
-        gridColumn: 'span 12 / span 12'
-      }
-    },
-    '&.two-column': {
-      '@lg': {
-        gridColumn: 'span 10 / span 10'
-      }
-    },
-    '&.three-column': {
-      '@lg': {
-        gridColumn: 'span 8 / span 8'
-      }
-    },
-    '&.with-toc': {
-      paddingTop: '{space.12}',
-      '@lg': {
-        paddingTop: '{space.8}',
-      }
-    },
-    '@lg': {
-      marginTop: 0
-    },
-    // `.not-prose` can be useful if creating <h1> with a component (404 page is an example)
-    ':deep(h1:not(.not-prose):first-child)': {
-      marginTop: 0,
-      fontSize: '{text.4xl.fontSize}',
-      lineHeight: '{text.4xl.lineHeight}',
-      '@sm': {
-        fontSize: '{text.5xl.fontSize}',
-        lineHeight: '{text.5xl.lineHeight}',
-      }
-    },
-    // `.not-prose` can be useful if creating <h1> with a component (404 page is an example)
-    ':deep(h1:not(.not-prose)first-child + p)': {
-      marginTop: 0,
-      marginBottom: '{space.8}',
-      paddingBottom: '{space.8}',
-      borderBottom: '1px solid {borders.primary.default}',
-      color: '{color.gray.500}',
-      '@sm': {
-        fontSize: '{text.lg.fontSize}',
-        lineHeight: '{text.lg.lineHeight}',
-      },
-      '@dark': {
-        color: '{color.gray.400}',
-      },
-      a: {
-        color: '{color.gray.700}',
-        '@dark': {
-          color: '{color.gray.200}',
-        },
-        "&:hover": {
-          borderColor: '{color.gray.700}'
-        }
-      }
-    },
-    '.docs-prev-next': {
-      marginTop: '{space.4}'
-    }
-  },
-  '.toc': {
-    position: 'sticky',
-    top: '{docus.header.height}',
-    display: 'flex',
-    alignItems: 'center',
-    mx: 'calc(0px - {space.4})',
-    '@sm': {
-      mx: 'calc(0px - {space.6})',
-    },
-    '@lg': {
-      maxHeight: '{docus.page.height}',
-      gridColumn: 'span 2 / span 2',
-      mx: 0,
-      alignSelf: 'flex-start',
-      py: '{space.8}',
-    },
-    '.toc-wrapper': {
-      width: '100%',
-      backdropFilter: '{backdrop.filter}',
-      backgroundColor: '{backdrop.background}',
-      px: '{space.4}',
-      '@sm': {
-        px: '{space.6}',
-      },
-      '@lg': {
-        px: 0,
-        backgroundColor: 'transparent',
-        backdropFilter: 'none'
-      },
-      button: {
-        display: 'flex',
-        alignItems: 'center',
-        py: '{space.3}',
-        width: '100%',
-        height: '100%',
-        '@lg': {
-          display: 'none'
-        },
-        '.title': {
-          fontSize: '{text.xs.fontSize}',
-          lineHeight: '{text.xs.lineHeight}',
-          fontWeight: '{fontWeight.semibold}',
-          marginRight: '{space.1}',
-        },
-        '.icon': {
-          width: '{space.4}',
-          height: '{space.4}',
-          transition: 'transform 100ms',
-          '&.rotate': {
-            transform: 'rotate(90deg)'
-          }
-        }
-      },
-      '.docs-toc-wrapper': {
-        display: 'none',
-        marginBottom: '{space.4}',
-        '&.opened': {
-          display: 'block'
-        },
-        '@lg': {
-          marginTop: 0,
-          display: 'block'
-        }
-      }
-    }
-  }
-})
-</style>
-
 <style scoped>
+.docs-page-content {
+  height: var(--page-height)
+}
+
+.page-body:deep(h1:not(.not-prose):first-child) {
+  --at-apply: mt-0 text-4xl leading-9;
+}
+
+.page-body:deep(h1:not(.not-prose)first-child + p) {
+  --at-apply: mt-0 mb-8 pb-8 border-b text-gray-500 sm:(text-lg leading-4.5) dark:text-gray-400;
+    /* borderBottom: '1px solid {borders.primary.default}', */
+}
+
+.page-body:deep(h1:not(.not-prose)first-child + p) a {
+  --at-apply: text-gray-700 dark: text-gray-200 hover:text-gray-700;
+    /* borderBottom: '1px solid {borders.primary.default}', */
+}
+
+.page-body .docs-prev-next {
+  --at-apply: mt-4;
+}
+
+.toc {
+  top: var(--header-height);
+}
+
 .HeaderContainer {
   max-width: 87rem;
   margin: auto auto;
@@ -286,5 +131,22 @@ css({
   margin: auto auto 5rem;
 
   --at-apply: px-12 xl:px-0;
+}
+
+@screen sm {
+  .page-body:deep(h1:not(.not-prose):first-child) {
+    --at-apply: mt-0 text-5xl leading-12;
+  }
+}
+
+@screen lg {
+  .aside-nav {
+    top: var(--header-height);
+    height: calc(100vh - var(--header-height));
+  }
+
+  .toc {
+    max-height: var(--page-height),
+  }
 }
 </style>

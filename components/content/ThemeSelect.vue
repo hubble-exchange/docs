@@ -24,7 +24,7 @@ whenever(logicAnd(logicOr(ml, shiftCmdl, shiftCtrll), notUsingInput), v => onCli
 </script>
 
 <template>
-  <button aria-label="Color Mode" @click="onClick">
+  <button class="inline-block icon-color" aria-label="Color Mode" @click="onClick">
     <ColorScheme placeholder="...">
       <Icon v-if="colorMode.preference === 'dark'" name="uil:moon" />
       <Icon v-else-if="colorMode.preference === 'light'" name="uil:sun" />
@@ -32,23 +32,3 @@ whenever(logicAnd(logicOr(ml, shiftCmdl, shiftCtrll), notUsingInput), v => onCli
     </ColorScheme>
   </button>
 </template>
-
-<style lang="ts" scoped>
-css({
-  button: {
-    display: 'inline-block',
-
-    color: '{color.gray.500}',
-    '@dark': {
-      color: '{color.gray.400}'
-    },
-
-    '&:hover': {
-      color: '{color.gray.700}',
-      '@dark': {
-        color: '{color.gray.200}',
-      }
-    },
-  }
-})
-</style>
