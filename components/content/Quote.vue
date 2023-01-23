@@ -1,28 +1,18 @@
 <script setup lang="ts"></script>
 
 <template>
-  <blockquote class="quote">
-    <ContentSlot class="quote-text" :use="$slots.default" unwrap="p">
+  <blockquote class="quote-shadow block relative w-full pt-2 pr-2 pb-3 pl-6 font-oblique">
+    <ContentSlot class="!m-0" :use="$slots.default" unwrap="p">
       Quote
     </ContentSlot>
   </blockquote>
 </template>
 
-<style scoped lang="ts">
-css({
-  '.quote': {
-    display: 'block',
-    position: 'relative',
-    width: '100%',
-    padding: '{space.2} {space.2} {space.3} {space.6}',
-    boxShadow: 'inset 2px 0 0 0 rgb(41 41 41)',
-    fontStyle: 'oblique',
-    '@dark': {
-      boxShadow: 'inset 2px 0 0 0 rgb(255 255 255)',
-    },
-  },
-  '.quote-text': {
-    margin: '0 !important',
-  }
-})
+<style scoped>
+.quote-shadow {
+  box-shadow: inset 2px 0 0 0 rgb(41 41 41);
+}
+.dark .quote-shadow {
+  box-shadow: inset 2px 0 0 0 rgb(255 255 255);
+}
 </style>

@@ -1,12 +1,7 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
 
-const props = defineProps({
-  urls: {
-    type: Array as PropType<string[]>,
-    default: () => [],
-  },
-})
+const props = defineProps({ urls: { type: Array as PropType<string[]>, default: () => [] } })
 
 const preparedLinks = computed(() => props.urls.map((i: string) => {
   const parts = i.split(' - ')
@@ -20,7 +15,7 @@ const preparedLinks = computed(() => props.urls.map((i: string) => {
     <div class="row-span-12 md:row-span-full md:col-span-6 img-wrapper">
       <slot />
     </div>
-    <div class="row-span-6 md:row-span-full md:col-span-6 flex flex-col">
+    <div class="row-span-6 md:row-span-full md:col-span-6 flex flex-col gap-4">
       <LinkCard v-for="t in preparedLinks" :key="t.title" :title="t.title " :to="t.link" :target="t.target" />
     </div>
   </div>
