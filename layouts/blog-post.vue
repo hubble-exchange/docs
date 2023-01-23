@@ -133,13 +133,13 @@ const isOpen = ref(false)
   --at-apply: px-12 xl:px-0;
 }
 
-@screen sm {
+@media (min-width: 640px) {
   .page-body:deep(h1:not(.not-prose):first-child) {
     --at-apply: mt-0 text-5xl leading-12;
   }
 }
 
-@screen lg {
+@media (min-width: 1024px) {
   .aside-nav {
     top: var(--header-height);
     height: calc(100vh - var(--header-height));
