@@ -1,7 +1,6 @@
 import { createResolver } from '@nuxt/kit'
-import transformerDirectives from '@unocss/transformer-directives'
-import transformerVariantGroup from '@unocss/transformer-variant-group'
 import { defineNuxtConfig } from 'nuxt/config'
+import { unocss } from './config/unocss'
 
 const { resolve } = createResolver(import.meta.url)
 
@@ -11,7 +10,7 @@ export default defineNuxtConfig({
     '@nuxt-themes/docus', // docs theme
   ],
 
-  css: ['@/assets/css/main.css'],
+  css: ['@/assets/css/gradients.css', '@/assets/css/main.css'],
 
   components: [
     {
@@ -24,12 +23,7 @@ export default defineNuxtConfig({
     preference: 'dark',
   },
   modules: ['@unocss/nuxt'],
-  unocss: {
-    transformers: [
-      transformerDirectives(),
-      transformerVariantGroup(),
-    ],
-  },
+  unocss,
   content: {
     highlight: {
       // theme: {
