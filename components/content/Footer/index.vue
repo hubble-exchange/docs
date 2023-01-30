@@ -1,5 +1,5 @@
 <template>
-  <footer class="flex items-center">
+  <footer class="flex items-center pb-5">
     <Container>
       <div
         class="w-full flex flex-col lg:flex-row items-center border border border-gray-200 dark:border-gray-900 rounded-2.5 px-3.5 py-3"
