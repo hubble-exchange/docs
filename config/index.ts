@@ -9,7 +9,8 @@ export const LINKS = [
   { title: 'Disclaimer', href: '/disclaimer' },
   { title: 'Terms of Use', href: '/terms' },
   { title: 'Security & Audits Reports', href: '/docs/technical-docs/audit-reports' },
-  { title: 'Feedback', href: 'https://feedback.hubble.exchange/bug-fixes' },
+  { title: 'Feedback', href: 'https://feedback.hubble.exchange/features' },
+  { title: 'Report Bug', href: 'https://feedback.hubble.exchange/bug-fixes' },
   { title: 'Governance', href: 'https://discord.gg/9zJ3SWVxmq' },
   { title: 'Github', href: 'https://github.com/hubble-exchange' },
 ]

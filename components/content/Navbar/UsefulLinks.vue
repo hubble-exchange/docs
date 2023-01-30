@@ -1,6 +1,6 @@
 <script setup>
 import { LINKS } from '~~/config'
-const footerTitle = ['Feedback', 'Governance', 'Github']
+const footerTitle = ['Report Bug', 'Governance', 'Github']
 const links = LINKS.filter(val => footerTitle.includes(val.title))
 </script>
 
