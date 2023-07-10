@@ -9,6 +9,7 @@ specifiers:
   '@types/node': ^18.11.18
   '@typescript-eslint/eslint-plugin': ^5.48.2
   '@typescript-eslint/parser': ^5.48.2
+  '@unocss/inspector': ^0.48.4
   '@unocss/nuxt': ^0.47.6
   '@unocss/transformer-directives': ^0.47.6
   '@vueuse/math': ^9.11.1
@@ -29,6 +30,7 @@ devDependencies:
   '@types/node': 18.11.18
   '@typescript-eslint/eslint-plugin': 5.48.2_caon6io6stgpr7lz2rtbhekxqy
   '@typescript-eslint/parser': 5.48.2_7uibuqfxkfaozanbtbziikiqje
+  '@unocss/inspector': 0.48.4
   '@unocss/nuxt': 0.47.6
   '@unocss/transformer-directives': 0.47.6
   '@vueuse/math': 9.11.1
@@ -1896,6 +1898,13 @@ packages:
 
   /@unocss/inspector/0.47.6:
     resolution: {integrity: sha512-enYQJo7+/UtSbgzpyKzL4vZU9Tz3QyoPGDmuKoHXSIt6sAtB+DQelW7vMWjcmwA19uaISxIGXx9BJPj5XV67UA==}
+    dependencies:
+      gzip-size: 6.0.0
+      sirv: 2.0.2
+    dev: true
+
+  /@unocss/inspector/0.48.4:
+    resolution: {integrity: sha512-YcPJoMUbOhldMxMLg9bGNMgReNIcYmIomI2NY77aiPcihv47LLPlN/ur3/syz5SxxihRgIIdFXmGhpj6HDa9vg==}
     dependencies:
       gzip-size: 6.0.0
       sirv: 2.0.2

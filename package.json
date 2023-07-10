@@ -40,6 +40,7 @@
     "@types/node": "^18.11.18",
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.48.2",
+    "@unocss/inspector": "^0.48.4",
     "@unocss/nuxt": "^0.47.6",
     "@unocss/transformer-directives": "^0.47.6",
     "@vueuse/math": "^9.11.1",
