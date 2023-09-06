@@ -36,7 +36,9 @@
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
     "@nuxt-themes/docus": "^1.4.7",
+    "@nuxt/content": "^2.8.2",
     "@nuxt/kit": "^3.0.0",
+    "@nuxthq/studio": "^0.14.0",
     "@types/node": "^18.11.18",
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.48.2",
@@ -48,7 +50,7 @@
     "eslint": "^8.32.0",
     "husky": "^8.0.3",
     "medium-to-markdown": "^0.0.3",
-    "nuxt": "^3.0.0",
+    "nuxt": "^3.7.1",
     "rimraf": "^3.0.2",
     "typescript": "^4.9.4"
   }
